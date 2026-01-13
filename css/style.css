@@ -1698,3 +1698,53 @@ textarea:focus {
 a {
     cursor: pointer;
 }
+
+/* Di bagian Wallet Actions di style.css, perbaiki: */
+
+.wallet-actions {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.wallet-actions .btn {
+    flex: 1;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.75rem;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.wallet-actions .btn i {
+    font-size: 0.7rem;
+}
+
+/* Pastikan button wallet terlihat dan dapat diklik */
+.edit-wallet-btn,
+.delete-wallet-btn {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.edit-wallet-btn:hover,
+.delete-wallet-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Style untuk wallet card agar lebih responsive */
+.wallet-card {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.wallet-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
