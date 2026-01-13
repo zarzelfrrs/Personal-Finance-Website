@@ -1618,4 +1618,83 @@ textarea:focus-visible {
 .tooltip.show {
     opacity: 1;
     transform: translateY(0);
+
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    /* Pastikan tombol bisa diklik */
+    button,
+    .btn,
+    .nav-item,
+    .mobile-menu-item,
+    .control-btn,
+    .mobile-control-btn {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+    }
+    
+    /* Ukuran tap target yang lebih besar untuk mobile */
+    .btn,
+    .nav-item,
+    .mobile-menu-item,
+    .control-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Pastikan input bisa diklik */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important; /* Mencegah zoom di iOS */
+    }
+    
+    /* Touch feedback yang lebih baik */
+    button:active,
+    .btn:active,
+    .nav-item:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* Fix untuk iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .btn,
+    button {
+        cursor: pointer;
+    }
+    
+    input,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* Hilangkan semua highlight default */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Custom focus styles yang tidak mengganggu */
+.custom-focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Hilangkan outline default tapi tetap accessible */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+}
+
+/* Pastikan link tetap bisa diklik */
+a {
+    cursor: pointer;
 }
